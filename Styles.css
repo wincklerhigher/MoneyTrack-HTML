@@ -22,11 +22,27 @@ header {
     text-align: center;
 }
 
+#pagina-inicial {
+    margin-top: 50px; 
+}
+
+#pagina-inicial p {
+    text-align: center;
+    font-size: 1.2em; 
+    font-weight: bold;
+    line-height: 1.5; 
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
 nav ul {
     list-style: none;
 }
 
-nav ul li {
+nav ul li {    
     display: inline-block;
     margin-right: 20px;
 }
