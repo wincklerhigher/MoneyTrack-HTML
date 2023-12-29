@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Track - Gestão de Finanças Pessoais</title>    
+    <!-- Favicon link -->
+    <link rel="icon" type="image/x-icon" href="wwwroot/favicon.ico">  
+</head>
+
+<body>
+    <header>
+        <h1>Bem-vindo à Money Track!</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="changeTab(event, 'pagina-inicial')">Página Inicial</a></li>
+            <li><a href="#" onclick="changeTab(event, 'financas')">Finanças Pessoais</a></li>
+            <li><a href="#" onclick="changeTab(event, 'contato')">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="pagina-inicial" class="tab-content">
+            <p>Saiba mais sobre nossa aplicação e como podemos ajudar com suas finanças.</p>
+        </section>
+        <section id="financas" class="tab-content" style="display: none;">            
+            <main>
+                <section>
+                    <h2>Seu Resumo Financeiro</h2>
+                    <p>Visualize um resumo das suas receitas e despesas.</p>
+                </section>
+                <section>
+                    <h2>Registrar Transações</h2>
+                    <form action="RegistrarTransacao.aspx" method="post">
+                        <label for="tipo">Tipo de Transação:</label>
+                        <select id="tipo" name="tipo">
+                            <option value="receita">Receita</option>
+                            <option value="despesa">Despesa</option>
+                        </select><br><br>
+        
+                        <label for="valor">Valor:</label>
+                        <input type="number" id="valor" name="valor" required><br><br>
+        
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao"><br><br>
+        
+                        <input type="submit" value="Registrar Transação">
+                        </form>
+                </section>
+            </main>
+        </section>
+        <section id="contato" class="tab-content" style="display: none;">            
+            <main>
+                <section>
+                    <h2>Entre em Contato Conosco</h2>
+                    <p>Use o formulário abaixo para nos enviar suas dúvidas e sugestões.</p>
+                    <form action="EnviarContato.aspx" method="post">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required><br><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br><br>
+
+                        <input type="submit" value="Enviar">
+                    </form>                
+                </section>
+            </main>
+        </section>
+    </main>
+    <footer>
+        <strong><p>&copy; Money Track-2023. Todos os direitos reservados.</strong></p>  
+    </footer>
+    <script>
+        function changeTab(event, tabId) {
+            var i, tabContent, tabLinks;
+
+            tabContent = document.querySelectorAll(".tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            tabLinks = document.querySelectorAll(".nav ul li a");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).style.display = "block";
+
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
