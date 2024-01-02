@@ -35,7 +35,7 @@
                 </section>
                 <section>
                     <h2>Registrar Transações</h2>
-                    <form action="https://formspree.io/stillgarbaby@gmail.com" method="POST" onsubmit="return handleFormSubmission(this);">
+                    <form id="register-form" action="/Home/Registrar" method="POST">
                         <label for="tipo">Tipo de Transação:</label>
                         <select id="tipo" name="tipo">
                             <option value="receita">Receita</option>
@@ -58,7 +58,7 @@
                 <section>
                     <h2>Entre em Contato Conosco</h2>
                     <p>Use o formulário abaixo para nos enviar suas dúvidas e sugestões.</p>
-                    <form action="https://formspree.io/stillgarbaby@gmail.com" method="POST" onsubmit="return handleFormSubmission(this);">
+                    <form id="contact-form" action="/Home/Cadastrar" method="POST">
                         <label for="nome">Nome:</label>
                         <input type="text" id="nome" name="nome" required><br><br>
 
