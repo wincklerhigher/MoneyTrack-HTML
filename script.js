@@ -25,3 +25,19 @@ function changeTab(event, tabId) {
     
     event.currentTarget.classList.add("active");
 }
+
+function handleFormSubmission(form) {
+        
+        var fakeServerResponse = {
+            success: true,
+            message: "Registro bem-sucedido!"
+        };
+
+        if (fakeServerResponse.success) {
+            alert(fakeServerResponse.message);
+            return true; 
+        } else {
+            alert("Erro no registro. Tente novamente.");
+            return false;
+        }
+    }
