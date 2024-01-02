@@ -27,14 +27,15 @@ function changeTab(event, tabId) {
 }
 
 function handleFormSubmission(form) {
+        console.log("Função handleFormSubmission chamada.");
         
-        var fakeServerResponse = {
+        var ServerResponse = {
             success: true,
             message: "Registro bem-sucedido!"
         };
 
-        if (fakeServerResponse.success) {
-            alert(fakeServerResponse.message);
+        if (ServerResponse.success) {
+            alert(ServerResponse.message);
             return true; 
         } else {
             alert("Erro no registro. Tente novamente.");
