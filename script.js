@@ -29,16 +29,25 @@ function changeTab(event, tabId) {
 function handleFormSubmission(form) {
     console.log("Função handleFormSubmission chamada.");
 
-    var ServerResponse = {
-        success: true,
-        message: "Registro bem-sucedido!"
-    };
-
-    if (ServerResponse.success) {
-        alert(ServerResponse.message);
-        return true;
-    } else {
-        alert("Erro no registro. Tente novamente.");
-        return false;
-    }
+    event.preventDefault();
+    
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Form submitted to Formspree:", data);
+            
+            if (data.success) {
+                
+                alert("Registro bem-sucedido!");
+            } else {
+                
+                alert("Erro no registro. Tente novamente.");
+            }
+        })
+        .catch(error => {
+            console.error("Error during form submission:", error);
+        });
 }
