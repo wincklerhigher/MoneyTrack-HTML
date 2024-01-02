@@ -26,12 +26,13 @@ function changeTab(event, tabId) {
     event.currentTarget.classList.add("active");
 }
 
-$(document).ready(function () {
-    $('#register-form').submit(function (e) {
-        e.preventDefault();        
+    document.addEventListener('DOMContentLoaded', function () {
+        var registerForms = document.querySelectorAll('#register-form');
 
-        $('#contact-form')[0].reset();
-
-        alert('Mensagem enviada com sucesso!');
+        registerForms.forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); 
+                alert('Formulário preenchido com sucesso!');                
+            });
+        });
     });
-});
