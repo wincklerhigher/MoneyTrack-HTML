@@ -35,7 +35,7 @@
                 </section>
                 <section>
                     <h2>Registrar Transações</h2>
-                    <form action="RegistrarTransacao.aspx" method="post">
+                    <form action="RegistrarTransacao.aspx" method="post" onsubmit="return handleFormSubmission(this);">
                         <label for="tipo">Tipo de Transação:</label>
                         <select id="tipo" name="tipo">
                             <option value="receita">Receita</option>
