@@ -34,3 +34,4 @@ $(document).ready(function () {
 
         alert('Mensagem enviada com sucesso!');
     });
+});
