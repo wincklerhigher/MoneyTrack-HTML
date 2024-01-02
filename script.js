@@ -26,28 +26,11 @@ function changeTab(event, tabId) {
     event.currentTarget.classList.add("active");
 }
 
-function handleFormSubmission(form) {
-    console.log("Função handleFormSubmission chamada.");
+$(document).ready(function () {
+    $('#register-form').submit(function (e) {
+        e.preventDefault();        
 
-    event.preventDefault();
-    
-    fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log("Form submitted to Formspree:", data);
-            
-            if (data.success) {
-                
-                alert("Registro bem-sucedido!");
-            } else {
-                
-                alert("Erro no registro. Tente novamente.");
-            }
-        })
-        .catch(error => {
-            console.error("Error during form submission:", error);
-        });
-}
+        $('#contact-form')[0].reset();
+
+        alert('Mensagem enviada com sucesso!');
+    });
