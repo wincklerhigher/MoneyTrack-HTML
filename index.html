@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -74,27 +74,10 @@
             </main>
         </section>
     </main>
+    
     <footer>
         <strong><p>&copy; Money Track-2023. Todos os direitos reservados.</strong></p>  
     </footer>
-    <script>
-        function changeTab(event, tabId) {
-            var i, tabContent, tabLinks;
-
-            tabContent = document.querySelectorAll(".tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-
-            tabLinks = document.querySelectorAll(".nav ul li a");
-            for (i = 0; i < tabLinks.length; i++) {
-                tabLinks[i].classList.remove("active");
-            }
-
-            document.getElementById(tabId).style.display = "block";
-
-            event.currentTarget.classList.add("active");
-        }
-    </script>
+    
 </body>
 </html>
